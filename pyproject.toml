@@ -1,0 +1,6 @@
+[tool.mypy]
+python_version = "3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+minversion = "3.10"
