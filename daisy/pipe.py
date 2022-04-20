@@ -5,8 +5,6 @@ P = ParamSpec("P")
 R = TypeVar("R")
 T = TypeVar("T")
 
-SENTINAL = object()
-
 class PipeStart:
 
     def __or__(self, nxt: Callable[P, R]) -> Pipe:
@@ -29,7 +27,5 @@ class Pipe(Generic[P, R]):
         else:
             res = self.prv(*args, **kwargs)
             return self.f(res)
-
-
 
 start = PipeStart()

@@ -1,17 +1,22 @@
 import daisy
 
-def test_basic() -> None:
+def square(x: int) -> int:
+    return x**2
 
-    def square(x: int) -> int:
-        return x**2
+def divides(x: int) -> int:
+    return x / 2
 
-    def divides(x: int) -> int:
-        return x / 2
+pipe = daisy.start | square | (lambda x: x + 1) | divides
 
-    pipe = daisy.start | square | square | divides
+xs = [pipe(i) for i in range(4)]
+print(xs)
 
-    assert pipe(3) == 81
-    assert pipe(2) == 16
+pipe = (
+    pipe
+    | square
+    | divides
+    | (lambda x: x + 4)
+)
 
-    pipe |= square | square
-
+x = pipe(34)
+print(x)
