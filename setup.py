@@ -9,6 +9,11 @@ extras_reqs = {
     "test": [
         "pytest",
         "pytest-cases",
+        "mypy",
+        "black",
+        "isort",
+        "pydocstyle[toml]",
+        "flake8",
     ],
 }
 

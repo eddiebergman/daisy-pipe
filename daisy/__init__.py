@@ -1,3 +1,4 @@
-from daisy.pipe import Pipe, start
+from daisy.link import DaisyLink
+from daisy.chain import DaisyChain, daisy
 
-__all__ = ["start", "Pipe"]
+__all__ = ["daisy", "DaisyChain", "DaisyLink"]
